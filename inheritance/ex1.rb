@@ -1,4 +1,13 @@
 class Vehicle
+  @@number_of_vehicles = 0
+
+  def self.number_of_vehicles
+    puts "This program has created #{@@number_of_vehicles} vehicles"
+  end
+
+  def initialize
+    @@number_of_vehicles += 1
+  end
   def self.miles_gas_calculate(miles, gas)
     puts "your m/g rate is #{miles.to_f / gas.to_f}"
   end
