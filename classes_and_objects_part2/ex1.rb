@@ -10,6 +10,9 @@ class MyCar
   def self.miles_gas_calculate(miles, gas)
     puts "your m/g rate is #{miles.to_f / gas.to_f}"
   end
+  def to_s
+    "my car is #{self.color}, #{@year}, #{@model}"
+  end
   def speedup(plus)
     @speed += plus
   end
