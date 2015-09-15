@@ -1,3 +1,9 @@
+module Towable
+  def can_tow?(pounds)
+    pounds < 2000 ? true : false
+  end
+end
+
 class Vehicle
   @@number_of_vehicles = 0
 
@@ -40,7 +46,8 @@ class MyCar < Vehicle
 end
 
 class MyTruck < Vehicle
-  NUMBER_OF_SEATS = 4
+  include Towable
+  NUMBER_OF_SEATS = 5
 end
 
 beauty = MyCar.new("2015", "sky blue", "sportcar")
@@ -49,3 +56,6 @@ beauty.speedup(130)
 beauty.brake(20)
 beauty.speed
 beauty.shut_off
+
+beast = MyTruck.new
+puts beast.can_tow?(1000)
